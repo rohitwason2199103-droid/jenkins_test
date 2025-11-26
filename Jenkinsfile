@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Example Print Stage') {
             steps {
-               echo "The value of myParameter is: ${params.myParameter}"
+               echo "The value of myParameter is: ${params.MESSAGE}"
 
             }
         }
