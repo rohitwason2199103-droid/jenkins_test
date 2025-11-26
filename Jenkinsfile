@@ -6,7 +6,10 @@ pipeline {
     stages {
         stage('Example Print Stage') {
             steps {
-              echo 'Hello World'
+              sh '''
+                    echo "Print message: ${MESSAGE}"
+    
+                '''
             }
         }
     }
