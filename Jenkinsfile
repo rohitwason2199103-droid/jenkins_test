@@ -5,7 +5,7 @@ pipeline {
         stage('Example Print Stage') {
             steps {
                sh "echo \"${params.MESSAGE}\""
-                echo ${MESSAGE}
+                echo "${MESSAGE}"
             }
         }
     }
