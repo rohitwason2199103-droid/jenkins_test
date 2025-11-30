@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'MY_PARAM', defaultValue: 'default_value', description: 'A sample parameter')
+    }
+    stages {
+        stage('Print Parameter') {
+            steps {
+                script {
+                    // Accessing the parameter in Groovy and printing
+                    echo "The value of MY_PARAM (from Groovy) is: ${params.MY_PARAM}"
+                }
+                // Using a Windows Batch command to print the parameter
+                bat 'echo The value of MY_PARAM (from Batch) is: %MY_PARAM%'
+                // Using a PowerShell command to print the parameter
+                powershell 'Write-Host "The value of MY_PARAM (from PowerShell) is: $env:MY_PARAM"'
+            }
+        }
+    }
+}
